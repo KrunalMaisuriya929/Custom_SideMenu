@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SideMenu: View {
     
+    @Binding var showMenu: Bool
     @Binding var SelectedTab: String
     @Namespace var animation
     
@@ -39,15 +40,17 @@ struct SideMenu: View {
                 
                 //Tab button
                 VStack(alignment: .leading, spacing: 10){
-                    TabButton(image: "house", title: "Home", SelectedTab: $SelectedTab, animation: animation)
+                    TabButton(image: "house", title: "Home", SelectedTab: $SelectedTab, showMenu: $showMenu, animation: animation)
                     
-                    TabButton(image: "bell.badge", title: "Notification", SelectedTab: $SelectedTab, animation: animation)
+                    TabButton(image: "folder.fill", title: "Groups", SelectedTab: $SelectedTab, showMenu: $showMenu, animation: animation)
                     
-                    TabButton(image: "star.fill", title: "Message", SelectedTab: $SelectedTab, animation: animation)
+                    TabButton(image: "bell.badge", title: "Notification", SelectedTab: $SelectedTab, showMenu: $showMenu, animation: animation)
                     
-                    TabButton(image: "gearshape", title: "Settings", SelectedTab: $SelectedTab, animation: animation)
+                    TabButton(image: "star.fill", title: "Message", SelectedTab: $SelectedTab, showMenu: $showMenu, animation: animation)
                     
-                    TabButton(image: "questionmark.circle", title: "FAQ", SelectedTab: $SelectedTab, animation: animation)
+                    TabButton(image: "gearshape", title: "Settings", SelectedTab: $SelectedTab, showMenu: $showMenu, animation: animation)
+                    
+                    TabButton(image: "questionmark.circle", title: "FAQ", SelectedTab: $SelectedTab, showMenu: $showMenu, animation: animation)
                     
                 }
                 .padding(.leading, -15)
@@ -57,7 +60,7 @@ struct SideMenu: View {
                 
                 //Signout Button.......!
                 VStack(alignment: .leading, spacing: 6, content: {
-                    TabButton(image: "rectangle.righthalf.inset.fill.arrow.right", title: "Log out", SelectedTab: .constant(""), animation: animation)
+                    TabButton(image: "rectangle.righthalf.inset.fill.arrow.right", title: "Log out", SelectedTab: .constant(""), showMenu: $showMenu, animation: animation)
                         .padding(.leading,-15)
                     
                     Text("App Version 1.4.32")

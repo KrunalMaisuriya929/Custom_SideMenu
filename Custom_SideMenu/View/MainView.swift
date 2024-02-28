@@ -20,7 +20,7 @@ struct MainView: View {
                 .ignoresSafeArea()
             
             //Side Menu .....
-            SideMenu(SelectedTab: $SelectedTab)
+            SideMenu(showMenu: $showMenu, SelectedTab: $SelectedTab)
             
             ZStack{
             
@@ -68,8 +68,7 @@ struct MainView: View {
                         
                     }
                 })
-                .padding()
-                ,alignment: .topLeading
+                .padding(),alignment: .topLeading
             )
         }
     }

@@ -15,6 +15,7 @@ struct TabButton: View {
     
     //Selected tab
     @Binding var SelectedTab: String
+    @Binding var showMenu: Bool
     
     //For Animation Slide
     var animation: Namespace.ID
@@ -22,7 +23,13 @@ struct TabButton: View {
     var body: some View {
         
         Button(action: {
-            withAnimation(.spring()){SelectedTab = title}
+            print("Tab is \(title)")
+            
+            withAnimation(.spring()){
+                SelectedTab = title
+                showMenu.toggle()
+
+            }
         }, label: {
             
             HStack(spacing : 10){

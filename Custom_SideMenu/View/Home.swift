@@ -26,6 +26,12 @@ struct Home: View {
             HomePage()
                 .tag("Home")
             
+//            Groups()
+//                .tag("Groups")
+            
+            GroupSection()
+                .tag("Groups")
+            
             notification()
                 .tag("Notification")
             
@@ -98,6 +104,19 @@ struct Message : View {
                 .fontWeight(.heavy)
                 .foregroundColor(.primary)
                 .navigationTitle("Message")
+        }
+    }
+}
+
+struct Groups : View {
+    var body: some View {
+        NavigationView{
+        
+            Text("Groups")
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+                .foregroundColor(.primary)
+                .navigationTitle("Groups")
         }
     }
 }
